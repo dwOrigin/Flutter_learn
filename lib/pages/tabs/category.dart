@@ -9,8 +9,13 @@ class CategoryPage extends StatefulWidget {
 class _CategoryPageState extends State<CategoryPage> {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("分类"),
+    return  Center(
+      child:  ElevatedButton(onPressed: (){
+        Navigator.pushNamed(context, "/form",arguments: {
+          "title": "命名路由传值",
+          "aid": 20
+        });
+      }, child:const Text("命名跳转到搜索界面")),
     );
   }
 }

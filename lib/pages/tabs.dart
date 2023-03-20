@@ -6,7 +6,8 @@ import './tabs/user.dart';
 import './tabs/message.dart';
 
 class Tabs extends StatefulWidget {
-  const Tabs({Key? key}) : super(key: key);
+  final int index;
+  const Tabs({super.key,this.index=0});
 
   @override
   State<Tabs> createState() => _TabsState();
@@ -21,6 +22,12 @@ class _TabsState extends State<Tabs> {
     const UserPage(),
   ];
   int _currentIndex = 0;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _currentIndex = widget.index;
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
